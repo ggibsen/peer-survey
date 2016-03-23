@@ -14,6 +14,7 @@ app.use(stormpath.init(app, {
      application: ‘YOUR SP APPLICATION URL',
 secretKey: security.stormpath_secret_key
 }));
+// probably should add external config for this port for the server
 var port = 8000;
 mongoose.connect(db.url);
 
