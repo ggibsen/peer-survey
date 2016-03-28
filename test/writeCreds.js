@@ -1,6 +1,6 @@
 TU_EMAIL_REGEX = new RegExp('^testuser*');
 SP_APP_NAME = 'Reader Test';
-
+// location where temp file is written to
 TEST_CREDS_TMP_FILE = '/tmp/readerTestCreds.js';
 
 var async = require('async');
