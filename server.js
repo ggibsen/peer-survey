@@ -6,6 +6,7 @@ var routes = require("./app/routes");
 var db = require('./config/db');
 var security = require('./config/security');
 
+// looks like we're calling ctor
 var app = express();
 var morgan = require('morgan’);
 app.use(morgan);
