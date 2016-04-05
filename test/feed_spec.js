@@ -71,3 +71,5 @@ function subSecondFeed(callback) {
              .toss()
  	callback(null);
 }
+
+async.series([addEmptyFeedListTest, subOneFeed, subDuplicateFeed, subSecondFeed, subOneFeedSecondUser]);
