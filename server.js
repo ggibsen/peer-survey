@@ -11,7 +11,7 @@ var app = express();
 var morgan = require('morgan’);
 app.use(morgan);
 app.use(stormpath.init(app, {
-     apiKeyFile: '. / config / stormpath_apikey.properties ',
+     apiKeyFile: '. /config/stormpath_apikey.properties ',
      application: ‘YOUR SP APPLICATION URL',
 secretKey: security.stormpath_secret_key
 }));
@@ -19,6 +19,8 @@ secretKey: security.stormpath_secret_key
 var port = 8000;
 mongoose.connect(db.url);
 
+// add a piece of middleware to express, the bodyParser lib
+// Express.js is like a chaining framework (like interceptor stack)
 app.use(bodyParser.urlencoded({
 	extended: true
 }));
