@@ -12,3 +12,5 @@ var userSchema = new mongoose.Schema({
      { collection: 'user' }
 );
 
+userSchema.index({email : 1}, {unique:true});
+userSchema.index({sp_api_key_id : 1}, {unique:true});
