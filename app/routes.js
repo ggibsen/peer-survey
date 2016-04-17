@@ -17,3 +17,20 @@ userSchema.index({sp_api_key_id : 1}, {unique:true});
 
 var UserModel = mongoose.model( 'User', userSchema );
 
+
+var feedSchema = new mongoose.Schema({
+         feedURL: { type: String, trim:true },
+         link: { type: String, trim:true },
+         description: { type: String, trim:true },
+         state: { type: String, trim:true, lowercase:true, default: 'new' },
+         createdDate: { type: Date, default: Date.now },
+         modifiedDate: { type: Date, default: Date.now },
+     },
+     { collection: 'feed' }
+);
+ 
+feedSchema.index({feedURL : 1}, {unique:true});
+feedSchema.index({link : 1}, {unique:true, sparse:true});
+ 
+var FeedModel = mongoose.model( 'Feed', feedSchema );
+
