@@ -53,3 +53,17 @@ feedEntrySchema.index({entryID : 1});
 feedEntrySchema.index({feedID : 1});
  
 var FeedEntryModel = mongoose.model( 'FeedEntry', feedEntrySchema );
+
+var userFeedEntrySchema = new mongoose.Schema({
+         userID: { type: mongoose.Schema.Types.ObjectId },
+         feedEntryID: { type: mongoose.Schema.Types.ObjectId },
+         feedID: { type: mongoose.Schema.Types.ObjectId },
+         read : { type: Boolean, default: false }
+     },
+     { collection: 'userFeedEntry' }
+ );
+ 
+// compound index having 1 represent each index is maintained in ascending order
+userFeedEntrySchema.index({userID : 1, feedID : 1, feedEntryID : 1, read : 1});
+ 
+var UserFeedEntryModel = mongoose.model('UserFeedEntry', userFeedEntrySchema );
