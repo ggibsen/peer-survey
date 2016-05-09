@@ -1,5 +1,14 @@
 // see https github.com ctindel reader
 // for learning example
+
+/*
+mongod
+npm install
+node server.js
+node setup_tests.js
+jasmine-node create_accounts_error_spec.js
+*/
+
 var express = require('express');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
